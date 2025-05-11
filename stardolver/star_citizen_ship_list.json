@@ -1,0 +1,2528 @@
+[
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "100i",
+        "Role(s)": [
+            "Touring"
+        ],
+        "Length": 19.3,
+        "Value": 50,
+        "Cargo": 2,
+        "Crew": 1,
+        "Release Year": 2020
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "125a",
+        "Role(s)": [
+            "Light Fighter"
+        ],
+        "Length": 19.3,
+        "Value": 60,
+        "Cargo": 2,
+        "Crew": 1,
+        "Release Year": 2020
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "135c",
+        "Role(s)": [
+            "Light Freight"
+        ],
+        "Length": 19.3,
+        "Value": 65,
+        "Cargo": 6,
+        "Crew": 1,
+        "Release Year": 2020
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "300i",
+        "Role(s)": [
+            "Touring"
+        ],
+        "Length": 27,
+        "Value": 60,
+        "Cargo": 8,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "315p",
+        "Role(s)": [
+            "Pathfinder"
+        ],
+        "Length": 27,
+        "Value": 65,
+        "Cargo": 12,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "325a",
+        "Role(s)": [
+            "Interdiction"
+        ],
+        "Length": 27,
+        "Value": 70,
+        "Cargo": 4,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "350r",
+        "Role(s)": [
+            "Racing"
+        ],
+        "Length": 27,
+        "Value": 125,
+        "Cargo": 4,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "400i",
+        "Role(s)": [
+            "Luxury",
+            "Touring"
+        ],
+        "Length": 56,
+        "Value": 250,
+        "Cargo": 42,
+        "Crew": 3,
+        "Release Year": 2021
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "600i Explorer",
+        "Role(s)": [
+            "Expedition"
+        ],
+        "Length": 91.5,
+        "Value": 475,
+        "Cargo": 44,
+        "Crew": 5,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "600i Touring",
+        "Role(s)": [
+            "Touring"
+        ],
+        "Length": 91.5,
+        "Value": 435,
+        "Cargo": 20,
+        "Crew": 5,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "85X",
+        "Role(s)": [
+            "Touring"
+        ],
+        "Length": 14,
+        "Value": 50,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2016
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "890 Jump",
+        "Role(s)": [
+            "Luxury",
+            "Touring"
+        ],
+        "Length": 210,
+        "Value": 950,
+        "Cargo": 388,
+        "Crew": 8,
+        "Release Year": 2019
+    },
+    {
+        "Manufacturer": "Crusader",
+        "Ship Name": "A2 Hercules Starlifter",
+        "Role(s)": [
+            "Bomber",
+            "Transport",
+            "Gunship"
+        ],
+        "Length": 94,
+        "Value": 750,
+        "Cargo": 216,
+        "Crew": 8,
+        "Release Year": 2021
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Apollo Medivac",
+        "Role(s)": [
+            "Medical"
+        ],
+        "Length": 43,
+        "Value": 275,
+        "Cargo": 28,
+        "Crew": 2,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Apollo Triage",
+        "Role(s)": [
+            "Medical"
+        ],
+        "Length": 43,
+        "Value": 250,
+        "Cargo": 28,
+        "Crew": 2,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Crusader",
+        "Ship Name": "Ares Star Fighter Inferno",
+        "Role(s)": [
+            "Heavy Fighter"
+        ],
+        "Length": 27,
+        "Value": 250,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2021
+    },
+    {
+        "Manufacturer": "Crusader",
+        "Ship Name": "Ares Star Fighter Ion",
+        "Role(s)": [
+            "Heavy Fighter"
+        ],
+        "Length": 27,
+        "Value": 250,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2021
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "Arrow",
+        "Role(s)": [
+            "Light Fighter"
+        ],
+        "Length": 17.25,
+        "Value": 75,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Aurora CL",
+        "Role(s)": [
+            "Light Freight"
+        ],
+        "Length": 19,
+        "Value": 45,
+        "Cargo": 6,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Aurora ES",
+        "Role(s)": [
+            "Pathfinder"
+        ],
+        "Length": 19,
+        "Value": 20,
+        "Cargo": 3,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Aurora LN",
+        "Role(s)": [
+            "Light Fighter"
+        ],
+        "Length": 19,
+        "Value": 40,
+        "Cargo": 3,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Aurora LX",
+        "Role(s)": [
+            "Pathfinder"
+        ],
+        "Length": 19,
+        "Value": 35,
+        "Cargo": 3,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Aurora MR",
+        "Role(s)": [
+            "Light Fighter"
+        ],
+        "Length": 19,
+        "Value": 30,
+        "Cargo": 3,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Avenger Stalker",
+        "Role(s)": [
+            "Interdiction",
+            "Transport"
+        ],
+        "Length": 20,
+        "Value": 60,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2015
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Avenger Titan",
+        "Role(s)": [
+            "Light Fighter",
+            "Light Freight"
+        ],
+        "Length": 20,
+        "Value": 60,
+        "Cargo": 8,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Avenger Warlock",
+        "Role(s)": [
+            "Interdiction"
+        ],
+        "Length": 20,
+        "Value": 85,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2015
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Bengal",
+        "Role(s)": [
+            "Carrier"
+        ],
+        "Length": 990,
+        "Value": 999999,
+        "Cargo": 999999,
+        "Crew": 476,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Esperia",
+        "Ship Name": "Blade",
+        "Role(s)": [
+            "Light Fighter"
+        ],
+        "Length": 20.5,
+        "Value": 275,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Buccaneer",
+        "Role(s)": [
+            "Interdiction",
+            "Light Fighter"
+        ],
+        "Length": 15.25,
+        "Value": 110,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2017
+    },
+    {
+        "Manufacturer": "Crusader",
+        "Ship Name": "C2 Hercules Starlifter",
+        "Role(s)": [
+            "Transport",
+            "Gunship"
+        ],
+        "Length": 94,
+        "Value": 400,
+        "Cargo": 696,
+        "Crew": 2,
+        "Release Year": 2021
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "C8 Pisces",
+        "Role(s)": [
+            "Pathfinder"
+        ],
+        "Length": 16,
+        "Value": 999999,
+        "Cargo": 4,
+        "Crew": 3,
+        "Release Year": 2019
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "C8X Pisces Expedition",
+        "Role(s)": [
+            "Expedition"
+        ],
+        "Length": 16,
+        "Value": 45,
+        "Cargo": 4,
+        "Crew": 3,
+        "Release Year": 2019
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "C8R Pisces Rescue",
+        "Role(s)": [
+            "Medical"
+        ],
+        "Length": 16,
+        "Value": 65,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2022
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "Carrack",
+        "Role(s)": [
+            "Expedition"
+        ],
+        "Length": 126.5,
+        "Value": 600,
+        "Cargo": 456,
+        "Crew": 6,
+        "Release Year": 2019
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Caterpillar",
+        "Role(s)": [
+            "Heavy Freight",
+            "Transport"
+        ],
+        "Length": 111.5,
+        "Value": 330,
+        "Cargo": 576,
+        "Crew": 4,
+        "Release Year": 2016
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Constellation Taurus",
+        "Role(s)": [
+            "Medium Freight"
+        ],
+        "Length": 70,
+        "Value": 200,
+        "Cargo": 174,
+        "Crew": 4,
+        "Release Year": 2021
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Constellation Andromeda",
+        "Role(s)": [
+            "Medium Freight",
+            "Gunship"
+        ],
+        "Length": 63.5,
+        "Value": 240,
+        "Cargo": 96,
+        "Crew": 4,
+        "Release Year": 2015
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Constellation Aquila",
+        "Role(s)": [
+            "Expedition"
+        ],
+        "Length": 63.5,
+        "Value": 315,
+        "Cargo": 96,
+        "Crew": 4,
+        "Release Year": 2017
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Constellation Phoenix",
+        "Role(s)": [
+            "Luxury",
+            "Touring"
+        ],
+        "Length": 63.5,
+        "Value": 350,
+        "Cargo": 96,
+        "Crew": 4,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Corsair",
+        "Role(s)": [
+            "Expedition"
+        ],
+        "Length": 53,
+        "Value": 250,
+        "Cargo": 72,
+        "Crew": 4,
+        "Release Year": 2022
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "Crucible",
+        "Role(s)": [
+            "Repairing"
+        ],
+        "Length": 90,
+        "Value": 350,
+        "Cargo": 230,
+        "Crew": 8,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Cutlass Black",
+        "Role(s)": [
+            "Medium Fighter",
+            "Medium Freight"
+        ],
+        "Length": 37.5,
+        "Value": 110,
+        "Cargo": 46,
+        "Crew": 3,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Cutlass Blue",
+        "Role(s)": [
+            "Interdiction"
+        ],
+        "Length": 37.5,
+        "Value": 175,
+        "Cargo": 12,
+        "Crew": 3,
+        "Release Year": 2020
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Cutlass Red",
+        "Role(s)": [
+            "Medical",
+            "Transport"
+        ],
+        "Length": 37.5,
+        "Value": 135,
+        "Cargo": 12,
+        "Crew": 2,
+        "Release Year": 2020
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Cutlass Steel",
+        "Role(s)": [
+            "Dropship"
+        ],
+        "Length": 37.5,
+        "Value": 235,
+        "Cargo": 0,
+        "Crew": 3,
+        "Release Year": 2021
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Cutter",
+        "Role(s)": [
+            "Light Freight"
+        ],
+        "Length": 20,
+        "Value": 45,
+        "Cargo": 4,
+        "Crew": 1,
+        "Release Year": 2022
+    },
+    {
+        "Manufacturer": "Banu",
+        "Ship Name": "Defender",
+        "Role(s)": [
+            "Light Fighter"
+        ],
+        "Length": 24.5,
+        "Value": 220,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2019
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Eclipse",
+        "Role(s)": [
+            "Stealth",
+            "Bomber"
+        ],
+        "Length": 24.5,
+        "Value": 300,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Endeavor",
+        "Role(s)": [
+            "Science",
+            "Medical",
+            "Expedition"
+        ],
+        "Length": 200,
+        "Value": 350,
+        "Cargo": 500,
+        "Crew": 5,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "F7C Hornet Mk I",
+        "Role(s)": [
+            "Medium Fighter"
+        ],
+        "Length": 22.5,
+        "Value": 125,
+        "Cargo": 2,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "F7C-M Super Hornet",
+        "Role(s)": [
+            "Medium Fighter"
+        ],
+        "Length": 25.5,
+        "Value": 185,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "F7C-S Hornet Ghost",
+        "Role(s)": [
+            "Stealth",
+            "Medium Fighter"
+        ],
+        "Length": 22.5,
+        "Value": 140,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "F7C-R Hornet Tracker",
+        "Role(s)": [
+            "Pathfinder"
+        ],
+        "Length": 22.5,
+        "Value": 150,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "F7A Hornet",
+        "Role(s)": [
+            "Medium Fighter"
+        ],
+        "Length": 22.5,
+        "Value": 999999,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "F7A Hornet Mk II",
+        "Role(s)": [
+            "Medium Fighter"
+        ],
+        "Length": 22.5,
+        "Value": 999999,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "F8A Lightning",
+        "Role(s)": [
+            "Heavy Fighter"
+        ],
+        "Length": 25,
+        "Value": 999999,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "F8C Lightning",
+        "Role(s)": [
+            "Heavy Fighter"
+        ],
+        "Length": 25,
+        "Value": 300,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Freelancer",
+        "Role(s)": [
+            "Medium Freight"
+        ],
+        "Length": 38,
+        "Value": 110,
+        "Cargo": 66,
+        "Crew": 4,
+        "Release Year": 2016
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Freelancer MAX",
+        "Role(s)": [
+            "Medium Freight"
+        ],
+        "Length": 38,
+        "Value": 150,
+        "Cargo": 120,
+        "Crew": 4,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Freelancer DUR",
+        "Role(s)": [
+            "Expedition"
+        ],
+        "Length": 38,
+        "Value": 135,
+        "Cargo": 36,
+        "Crew": 4,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Freelancer MIS",
+        "Role(s)": [
+            "Gunship"
+        ],
+        "Length": 38,
+        "Value": 175,
+        "Cargo": 36,
+        "Crew": 4,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Mirai",
+        "Ship Name": "Fury",
+        "Role(s)": [
+            "Snub Fighter"
+        ],
+        "Length": 7,
+        "Value": 55,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "Mirai",
+        "Ship Name": "Fury MX",
+        "Role(s)": [
+            "Snub Fighter"
+        ],
+        "Length": 7,
+        "Value": 55,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "Crusader",
+        "Ship Name": "Genesis Starliner",
+        "Role(s)": [
+            "Transport"
+        ],
+        "Length": 85,
+        "Value": 400,
+        "Cargo": 300,
+        "Crew": 8,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "Gladiator",
+        "Role(s)": [
+            "Bomber"
+        ],
+        "Length": 22.75,
+        "Value": 165,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2015
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Gladius",
+        "Role(s)": [
+            "Light Fighter"
+        ],
+        "Length": 21,
+        "Value": 90,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2015
+    },
+    {
+        "Manufacturer": "Esperia",
+        "Ship Name": "Glaive",
+        "Role(s)": [
+            "Medium Fighter"
+        ],
+        "Length": 31,
+        "Value": 350,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Hammerhead",
+        "Role(s)": [
+            "Gunship"
+        ],
+        "Length": 120,
+        "Value": 725,
+        "Cargo": 40,
+        "Crew": 9,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "Hawk",
+        "Role(s)": [
+            "Light Fighter"
+        ],
+        "Length": 16,
+        "Value": 100,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Herald",
+        "Role(s)": [
+            "Datarunning"
+        ],
+        "Length": 24.75,
+        "Value": 85,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2016
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Hull A",
+        "Role(s)": [
+            "Medium Freight"
+        ],
+        "Length": 30,
+        "Value": 90,
+        "Cargo": 64,
+        "Crew": 1,
+        "Release Year": 2022
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Hull B",
+        "Role(s)": [
+            "Heavy Freight"
+        ],
+        "Length": 49,
+        "Value": 140,
+        "Cargo": 384,
+        "Crew": 1,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Hull C",
+        "Role(s)": [
+            "Heavy Freight"
+        ],
+        "Length": 125,
+        "Value": 500,
+        "Cargo": 4608,
+        "Crew": 4,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Hull D",
+        "Role(s)": [
+            "Heavy Freight"
+        ],
+        "Length": 209,
+        "Value": 550,
+        "Cargo": 20736,
+        "Crew": 5,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Hull E",
+        "Role(s)": [
+            "Heavy Freight"
+        ],
+        "Length": 372,
+        "Value": 750,
+        "Cargo": 98304,
+        "Crew": 5,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "Hurricane",
+        "Role(s)": [
+            "Heavy Fighter"
+        ],
+        "Length": 22,
+        "Value": 210,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Idris-M",
+        "Role(s)": [
+            "Frigate"
+        ],
+        "Length": 242,
+        "Value": 1000,
+        "Cargo": 831,
+        "Crew": 28,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Idris-P",
+        "Role(s)": [
+            "Frigate"
+        ],
+        "Length": 233,
+        "Value": 1500,
+        "Cargo": 995,
+        "Crew": 28,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Idris-K",
+        "Role(s)": [
+            "Frigate"
+        ],
+        "Length": 233,
+        "Value": 1800,
+        "Cargo": 995,
+        "Crew": 28,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Javelin",
+        "Role(s)": [
+            "Destroyer"
+        ],
+        "Length": 480,
+        "Value": 3000,
+        "Cargo": 5400,
+        "Crew": 80,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Aopoa",
+        "Ship Name": "Khartu-al",
+        "Role(s)": [
+            "Light Fighter"
+        ],
+        "Length": 15,
+        "Value": 175,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2016
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Kraken",
+        "Role(s)": [
+            "Carrier"
+        ],
+        "Length": 270,
+        "Value": 1650,
+        "Cargo": 3792,
+        "Crew": 10,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Kraken Privateer",
+        "Role(s)": [
+            "Trading",
+            "Carrier"
+        ],
+        "Length": 270,
+        "Value": 2000,
+        "Cargo": 768,
+        "Crew": 10,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "Legionnaire",
+        "Role(s)": [
+            "Boarding"
+        ],
+        "Length": 32,
+        "Value": 120,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "Liberator",
+        "Role(s)": [
+            "Carrier"
+        ],
+        "Length": 119,
+        "Value": 575,
+        "Cargo": 400,
+        "Crew": 2,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Crusader",
+        "Ship Name": "M2 Hercules Starlifter",
+        "Role(s)": [
+            "Transport"
+        ],
+        "Length": 94,
+        "Value": 520,
+        "Cargo": 522,
+        "Crew": 3,
+        "Release Year": 2021
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "M50",
+        "Role(s)": [
+            "Racing"
+        ],
+        "Length": 11.5,
+        "Value": 100,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Argo",
+        "Ship Name": "MOLE",
+        "Role(s)": [
+            "Mining"
+        ],
+        "Length": 45,
+        "Value": 315,
+        "Cargo": 96,
+        "Crew": 4,
+        "Release Year": 2019
+    },
+    {
+        "Manufacturer": "Argo",
+        "Ship Name": "MPUV Cargo",
+        "Role(s)": [
+            "Light Freight"
+        ],
+        "Length": 9.5,
+        "Value": 35,
+        "Cargo": 2,
+        "Crew": 1,
+        "Release Year": 2016
+    },
+    {
+        "Manufacturer": "Argo",
+        "Ship Name": "MPUV Personnel",
+        "Role(s)": [
+            "Transport"
+        ],
+        "Length": 9.25,
+        "Value": 40,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2016
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Mantis",
+        "Role(s)": [
+            "Stealth",
+            "Interdiction"
+        ],
+        "Length": 30,
+        "Value": 150,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2019
+    },
+    {
+        "Manufacturer": "Banu",
+        "Ship Name": "Merchantman",
+        "Role(s)": [
+            "Heavy Freight",
+            "Trading"
+        ],
+        "Length": 237,
+        "Value": 650,
+        "Cargo": 2880,
+        "Crew": 8,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Crusader",
+        "Ship Name": "Mercury Star Runner",
+        "Role(s)": [
+            "Datarunning",
+            "Medium Freight"
+        ],
+        "Length": 56,
+        "Value": 260,
+        "Cargo": 114,
+        "Crew": 3,
+        "Release Year": 2020
+    },
+    {
+        "Manufacturer": "Consolidated Outland",
+        "Ship Name": "Mustang Alpha",
+        "Role(s)": [
+            "Light Freight"
+        ],
+        "Length": 21.5,
+        "Value": 30,
+        "Cargo": 4,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Consolidated Outland",
+        "Ship Name": "Mustang Beta",
+        "Role(s)": [
+            "Pathfinder"
+        ],
+        "Length": 21.5,
+        "Value": 40,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Consolidated Outland",
+        "Ship Name": "Mustang Gamma",
+        "Role(s)": [
+            "Racing"
+        ],
+        "Length": 21.5,
+        "Value": 55,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Consolidated Outland",
+        "Ship Name": "Mustang Delta",
+        "Role(s)": [
+            "Light Fighter"
+        ],
+        "Length": 21.5,
+        "Value": 65,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Consolidated Outland",
+        "Ship Name": "Mustang Omega",
+        "Role(s)": [
+            "Racing"
+        ],
+        "Length": 21.5,
+        "Value": 999999,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2014
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Nautilus",
+        "Role(s)": [
+            "Minelayer",
+            "Minesweeper"
+        ],
+        "Length": 125,
+        "Value": 725,
+        "Cargo": 64,
+        "Crew": 8,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Consolidated Outland",
+        "Ship Name": "Nomad",
+        "Role(s)": [
+            "Light Freight"
+        ],
+        "Length": 27,
+        "Value": 80,
+        "Cargo": 24,
+        "Crew": 1,
+        "Release Year": 2020
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Odyssey",
+        "Role(s)": [
+            "Expedition",
+            "Mining",
+            "Refining"
+        ],
+        "Length": 140,
+        "Value": 700,
+        "Cargo": 252,
+        "Crew": 6,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Orion",
+        "Role(s)": [
+            "Mining"
+        ],
+        "Length": 340,
+        "Value": 650,
+        "Cargo": 384,
+        "Crew": 7,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Kruger",
+        "Ship Name": "P-52 Merlin",
+        "Role(s)": [
+            "Snub Fighter"
+        ],
+        "Length": 12,
+        "Value": 25,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2015
+    },
+    {
+        "Manufacturer": "Kruger",
+        "Ship Name": "P-72 Archimedes",
+        "Role(s)": [
+            "Luxury",
+            "Snub Fighter"
+        ],
+        "Length": 12,
+        "Value": 25,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2019
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Perseus",
+        "Role(s)": [
+            "Gunship"
+        ],
+        "Length": 100,
+        "Value": 675,
+        "Cargo": 50,
+        "Crew": 6,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Consolidated Outland",
+        "Ship Name": "Pioneer",
+        "Role(s)": [
+            "Construction"
+        ],
+        "Length": 200,
+        "Value": 925,
+        "Cargo": 1000,
+        "Crew": 8,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Polaris",
+        "Role(s)": [
+            "Corvette",
+            "Gunship"
+        ],
+        "Length": 166,
+        "Value": 975,
+        "Cargo": 576,
+        "Crew": 12,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Prospector",
+        "Role(s)": [
+            "Mining"
+        ],
+        "Length": 26.5,
+        "Value": 155,
+        "Cargo": 32,
+        "Crew": 1,
+        "Release Year": 2017
+    },
+    {
+        "Manufacturer": "Esperia",
+        "Ship Name": "Prowler",
+        "Role(s)": [
+            "Stealth",
+            "Dropship"
+        ],
+        "Length": 34,
+        "Value": 440,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2020
+    },
+    {
+        "Manufacturer": "Argo",
+        "Ship Name": "RAFT",
+        "Role(s)": [
+            "Medium Freight"
+        ],
+        "Length": 39.5,
+        "Value": 125,
+        "Cargo": 96,
+        "Crew": 2,
+        "Release Year": 2021
+    },
+    {
+        "Manufacturer": "Gatac",
+        "Ship Name": "Railen",
+        "Role(s)": [
+            "Medium Freight"
+        ],
+        "Length": 54,
+        "Value": 225,
+        "Cargo": 320,
+        "Crew": 4,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Mirai",
+        "Ship Name": "Razor",
+        "Role(s)": [
+            "Racing"
+        ],
+        "Length": 11.5,
+        "Value": 145,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Mirai",
+        "Ship Name": "Razor EX",
+        "Role(s)": [
+            "Stealth",
+            "Racing"
+        ],
+        "Length": 11.5,
+        "Value": 155,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Mirai",
+        "Ship Name": "Razor LX",
+        "Role(s)": [
+            "Luxury",
+            "Racing"
+        ],
+        "Length": 11.5,
+        "Value": 150,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Reclaimer",
+        "Role(s)": [
+            "Salvage"
+        ],
+        "Length": 155,
+        "Value": 400,
+        "Cargo": 300,
+        "Crew": 5,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Redeemer",
+        "Role(s)": [
+            "Gunship"
+        ],
+        "Length": 51,
+        "Value": 330,
+        "Cargo": 2,
+        "Crew": 4,
+        "Release Year": 2021
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Reliant Kore",
+        "Role(s)": [
+            "Light Freight"
+        ],
+        "Length": 14.5,
+        "Value": 65,
+        "Cargo": 6,
+        "Crew": 2,
+        "Release Year": 2016
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Reliant Tana",
+        "Role(s)": [
+            "Light Fighter"
+        ],
+        "Length": 14.5,
+        "Value": 75,
+        "Cargo": 1,
+        "Crew": 2,
+        "Release Year": 2019
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Reliant Mako",
+        "Role(s)": [
+            "Reporting"
+        ],
+        "Length": 14.5,
+        "Value": 95,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2019
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Reliant Sen",
+        "Role(s)": [
+            "Science"
+        ],
+        "Length": 14.5,
+        "Value": 85,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2019
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Retaliator",
+        "Role(s)": [
+            "Bomber"
+        ],
+        "Length": 69.5,
+        "Value": 175,
+        "Cargo": 0,
+        "Crew": 7,
+        "Release Year": 2016
+    },
+    {
+        "Manufacturer": "Argo",
+        "Ship Name": "SRV",
+        "Role(s)": [
+            "Recovery"
+        ],
+        "Length": 28.5,
+        "Value": 165,
+        "Cargo": 12,
+        "Crew": 1,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Sabre",
+        "Role(s)": [
+            "Stealth",
+            "Medium Fighter"
+        ],
+        "Length": 24.5,
+        "Value": 175,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2016
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Sabre Raven",
+        "Role(s)": [
+            "Medium Fighter",
+            "Interdiction"
+        ],
+        "Length": 24.5,
+        "Value": 999999,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2017
+    },
+    {
+        "Manufacturer": "Aopoa",
+        "Ship Name": "San'tok.y\u0101i",
+        "Role(s)": [
+            "Medium Fighter"
+        ],
+        "Length": 24,
+        "Value": 240,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Scorpius",
+        "Role(s)": [
+            "Heavy Fighter"
+        ],
+        "Length": 32,
+        "Value": 240,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2022
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Scorpius Antares",
+        "Role(s)": [
+            "Heavy Fighter",
+            "Interdiction"
+        ],
+        "Length": 32,
+        "Value": 230,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "Vanduul",
+        "Ship Name": "Scythe",
+        "Role(s)": [
+            "Medium Fighter"
+        ],
+        "Length": 31,
+        "Value": 300,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2015
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Starfarer",
+        "Role(s)": [
+            "Refueling"
+        ],
+        "Length": 101,
+        "Value": 300,
+        "Cargo": 291,
+        "Crew": 7,
+        "Release Year": 2016
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Starfarer Gemini",
+        "Role(s)": [
+            "Refueling"
+        ],
+        "Length": 101,
+        "Value": 340,
+        "Cargo": 291,
+        "Crew": 6,
+        "Release Year": 2016
+    },
+    {
+        "Manufacturer": "Esperia",
+        "Ship Name": "Talon",
+        "Role(s)": [
+            "Light Fighter"
+        ],
+        "Length": 24,
+        "Value": 115,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2020
+    },
+    {
+        "Manufacturer": "Esperia",
+        "Ship Name": "Talon Shrike",
+        "Role(s)": [
+            "Light Fighter"
+        ],
+        "Length": 24,
+        "Value": 115,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2020
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "Terrapin",
+        "Role(s)": [
+            "Pathfinder"
+        ],
+        "Length": 20,
+        "Value": 220,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "Valkyrie",
+        "Role(s)": [
+            "Dropship"
+        ],
+        "Length": 46.5,
+        "Value": 375,
+        "Cargo": 30,
+        "Crew": 5,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Vanguard Warden",
+        "Role(s)": [
+            "Heavy Fighter"
+        ],
+        "Length": 48,
+        "Value": 260,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2016
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Vanguard Sentinel",
+        "Role(s)": [
+            "Interdiction"
+        ],
+        "Length": 48,
+        "Value": 275,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2019
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Vanguard Harbinger",
+        "Role(s)": [
+            "Bomber"
+        ],
+        "Length": 48,
+        "Value": 290,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2019
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Vanguard Hoplite",
+        "Role(s)": [
+            "Dropship"
+        ],
+        "Length": 48,
+        "Value": 240,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2016
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Vulcan",
+        "Role(s)": [
+            "Repairing",
+            "Refueling"
+        ],
+        "Length": 38.5,
+        "Value": 200,
+        "Cargo": 12,
+        "Crew": 3,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Vulture",
+        "Role(s)": [
+            "Salvage"
+        ],
+        "Length": 33,
+        "Value": 175,
+        "Cargo": 12,
+        "Crew": 1,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Galaxy",
+        "Role(s)": [
+            "Medical",
+            "Medium Freight",
+            "Refining"
+        ],
+        "Length": 110,
+        "Value": 380,
+        "Cargo": 64,
+        "Crew": 6,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Crusader",
+        "Ship Name": "C1 Spirit",
+        "Role(s)": [
+            "Medium Freight"
+        ],
+        "Length": 46.5,
+        "Value": 125,
+        "Cargo": 64,
+        "Crew": 2,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "Crusader",
+        "Ship Name": "A1 Spirit",
+        "Role(s)": [
+            "Bomber"
+        ],
+        "Length": 46.5,
+        "Value": 200,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "Crusader",
+        "Ship Name": "E1 Spirit",
+        "Role(s)": [
+            "Transport"
+        ],
+        "Length": 46.5,
+        "Value": 150,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Greycat",
+        "Ship Name": "ROC",
+        "Role(s)": [
+            "Mining"
+        ],
+        "Length": 6,
+        "Value": 55,
+        "Cargo": 0.8,
+        "Crew": 1,
+        "Release Year": 2020
+    },
+    {
+        "Manufacturer": "Greycat",
+        "Ship Name": "ROC-DS",
+        "Role(s)": [
+            "Mining"
+        ],
+        "Length": 6.6,
+        "Value": 75,
+        "Cargo": 3.5,
+        "Crew": 2,
+        "Release Year": 2021
+    },
+    {
+        "Manufacturer": "Greycat",
+        "Ship Name": "STV",
+        "Role(s)": [
+            "Transport"
+        ],
+        "Length": 6,
+        "Value": 40,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2022
+    },
+    {
+        "Manufacturer": "Greycat",
+        "Ship Name": "PTV",
+        "Role(s)": [
+            "Transport"
+        ],
+        "Length": 3.5,
+        "Value": 15,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2013
+    },
+    {
+        "Manufacturer": "Consolidated Outland",
+        "Ship Name": "HoverQuad",
+        "Role(s)": [
+            "Racing"
+        ],
+        "Length": 5.15,
+        "Value": 30,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2022
+    },
+    {
+        "Manufacturer": "Tumbril",
+        "Ship Name": "Ranger RC",
+        "Role(s)": [
+            "Racing"
+        ],
+        "Length": 3.7,
+        "Value": 35,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Tumbril",
+        "Ship Name": "Ranger CV",
+        "Role(s)": [
+            "Touring"
+        ],
+        "Length": 3.7,
+        "Value": 35,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Tumbril",
+        "Ship Name": "Ranger TR",
+        "Role(s)": [
+            "Combat"
+        ],
+        "Length": 3.7,
+        "Value": 40,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Dragonfly",
+        "Role(s)": [
+            "Racing",
+            "Transport"
+        ],
+        "Length": 7,
+        "Value": 40,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2017
+    },
+    {
+        "Manufacturer": "Aopoa",
+        "Ship Name": "Nox",
+        "Role(s)": [
+            "Racing"
+        ],
+        "Length": 5.5,
+        "Value": 45,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Mule",
+        "Role(s)": [
+            "Transport"
+        ],
+        "Length": 4,
+        "Value": 45,
+        "Cargo": 1,
+        "Crew": 1,
+        "Release Year": 2022
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Ursa",
+        "Role(s)": [
+            "Expedition"
+        ],
+        "Length": 8,
+        "Value": 50,
+        "Cargo": 2,
+        "Crew": 2,
+        "Release Year": 2017
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "G12",
+        "Role(s)": [
+            "Touring"
+        ],
+        "Length": 7.25,
+        "Value": 60,
+        "Cargo": 2,
+        "Crew": 2,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "G12r",
+        "Role(s)": [
+            "Racing"
+        ],
+        "Length": 7.25,
+        "Value": 60,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "G12a",
+        "Role(s)": [
+            "Combat"
+        ],
+        "Length": 7.25,
+        "Value": 65,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Tumbril",
+        "Ship Name": "Cyclone",
+        "Role(s)": [
+            "Expedition"
+        ],
+        "Length": 6,
+        "Value": 55,
+        "Cargo": 1,
+        "Crew": 2,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Tumbril",
+        "Ship Name": "Cyclone TR",
+        "Role(s)": [
+            "Combat"
+        ],
+        "Length": 6,
+        "Value": 65,
+        "Cargo": 0,
+        "Crew": 3,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Tumbril",
+        "Ship Name": "Cyclone RC",
+        "Role(s)": [
+            "Racing"
+        ],
+        "Length": 6,
+        "Value": 65,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Tumbril",
+        "Ship Name": "Cyclone RN",
+        "Role(s)": [
+            "Pathfinder"
+        ],
+        "Length": 6,
+        "Value": 65,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Tumbril",
+        "Ship Name": "Cyclone AA",
+        "Role(s)": [
+            "Combat"
+        ],
+        "Length": 6,
+        "Value": 80,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2018
+    },
+    {
+        "Manufacturer": "Tumbril",
+        "Ship Name": "Cyclone MT",
+        "Role(s)": [
+            "Combat"
+        ],
+        "Length": 6,
+        "Value": 75,
+        "Cargo": 0,
+        "Crew": 3,
+        "Release Year": 2021
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "Spartan",
+        "Role(s)": [
+            "Transport"
+        ],
+        "Length": 17,
+        "Value": 80,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2021
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "Centurion",
+        "Role(s)": [
+            "Combat"
+        ],
+        "Length": 17,
+        "Value": 110,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2022
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "Ballista",
+        "Role(s)": [
+            "Combat"
+        ],
+        "Length": 17,
+        "Value": 140,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2019
+    },
+    {
+        "Manufacturer": "Tumbril",
+        "Ship Name": "Nova",
+        "Role(s)": [
+            "Combat"
+        ],
+        "Length": 20,
+        "Value": 120,
+        "Cargo": 0,
+        "Crew": 3,
+        "Release Year": 2021
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Lynx",
+        "Role(s)": [
+            "Luxury",
+            "Transport"
+        ],
+        "Length": 7.75,
+        "Value": 60,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "X1",
+        "Role(s)": [
+            "Touring"
+        ],
+        "Length": 5.5,
+        "Value": 40,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "X1 Force",
+        "Role(s)": [
+            "Pathfinder"
+        ],
+        "Length": 5.5,
+        "Value": 50,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "Origin",
+        "Ship Name": "X1 Velocity",
+        "Role(s)": [
+            "Racing"
+        ],
+        "Length": 5.5,
+        "Value": 45,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "Mirai",
+        "Ship Name": "Fury LX",
+        "Role(s)": [
+            "Racing"
+        ],
+        "Length": 7,
+        "Value": 55,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Expanse",
+        "Role(s)": [
+            "Refining"
+        ],
+        "Length": 35.5,
+        "Value": 150,
+        "Cargo": 128,
+        "Crew": 1,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Zeus CL Mk II",
+        "Role(s)": [
+            "Medium Freight"
+        ],
+        "Length": 46,
+        "Value": 175,
+        "Cargo": 128,
+        "Crew": 3,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Zeus ES Mk II",
+        "Role(s)": [
+            "Expedition"
+        ],
+        "Length": 46,
+        "Value": 175,
+        "Cargo": 32,
+        "Crew": 3,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Zeus MR Mk II",
+        "Role(s)": [
+            "Bounty Hunter"
+        ],
+        "Length": 46,
+        "Value": 190,
+        "Cargo": 16,
+        "Crew": 3,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Cutter Scout",
+        "Role(s)": [
+            "Recon"
+        ],
+        "Length": 20,
+        "Value": 50,
+        "Cargo": 2,
+        "Crew": 1,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "Gatac",
+        "Ship Name": "Syulen",
+        "Role(s)": [
+            "Light Freight",
+            "Expedition"
+        ],
+        "Length": 25,
+        "Value": 70,
+        "Cargo": 6,
+        "Crew": 1,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "Tumbril",
+        "Ship Name": "Storm AA",
+        "Role(s)": [
+            "Combat"
+        ],
+        "Length": 10.5,
+        "Value": 100,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Arrastra",
+        "Role(s)": [
+            "Mining",
+            "Refining"
+        ],
+        "Length": 124,
+        "Value": 575,
+        "Cargo": 576,
+        "Crew": 5,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Cutter Rambler",
+        "Role(s)": [
+            "Expedition"
+        ],
+        "Length": 20,
+        "Value": 50,
+        "Cargo": 2,
+        "Crew": 1,
+        "Release Year": 2023
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "F7C Hornet Mk II",
+        "Role(s)": [
+            "Medium Fighter"
+        ],
+        "Length": 22.5,
+        "Value": 175,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "Mirai",
+        "Ship Name": "Pulse LX",
+        "Role(s)": [
+            "Racing"
+        ],
+        "Length": 3.5,
+        "Value": 30,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Sabre Firebird",
+        "Role(s)": [
+            "Medium Fighter"
+        ],
+        "Length": 24.5,
+        "Value": 185,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "Mirai",
+        "Ship Name": "Pulse",
+        "Role(s)": [
+            "Combat"
+        ],
+        "Length": 3.5,
+        "Value": 30,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Ironclad",
+        "Role(s)": [
+            "Heavy Freight"
+        ],
+        "Length": 120,
+        "Value": 450,
+        "Cargo": 1536,
+        "Crew": 6,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Ironclad Assault",
+        "Role(s)": [
+            "Heavy Freight",
+            "Dropship",
+            "Repairing"
+        ],
+        "Length": 120,
+        "Value": 535,
+        "Cargo": 1152,
+        "Crew": 6,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "RSI",
+        "Ship Name": "Ursa Medivac",
+        "Role(s)": [
+            "Medical"
+        ],
+        "Length": 8,
+        "Value": 60,
+        "Cargo": 0,
+        "Crew": 3,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "Argo",
+        "Ship Name": "MPUV Tractor",
+        "Role(s)": [
+            "Light Freight"
+        ],
+        "Length": 9.5,
+        "Value": 40,
+        "Cargo": 16,
+        "Crew": 1,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "Aegis",
+        "Ship Name": "Sabre Peregrine",
+        "Role(s)": [
+            "Racing"
+        ],
+        "Length": 24.5,
+        "Value": 185,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "Argo",
+        "Ship Name": "ATLS",
+        "Role(s)": [
+            "Light Freight"
+        ],
+        "Length": 0.5,
+        "Value": 40,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "Argo",
+        "Ship Name": "CSV-SM",
+        "Role(s)": [
+            "Transport"
+        ],
+        "Length": 5.44,
+        "Value": 45,
+        "Cargo": 4,
+        "Crew": 1,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Starlancer MAX",
+        "Role(s)": [
+            "Medium Freight"
+        ],
+        "Length": 83,
+        "Value": 250,
+        "Cargo": 224,
+        "Crew": 4,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Starlancer TAC",
+        "Role(s)": [
+            "Patrol"
+        ],
+        "Length": 83,
+        "Value": 330,
+        "Cargo": 96,
+        "Crew": 7,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Crusader",
+        "Ship Name": "Intrepid",
+        "Role(s)": [
+            "Light Freight"
+        ],
+        "Length": 23,
+        "Value": 65,
+        "Cargo": 8,
+        "Crew": 1,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "Paladin",
+        "Role(s)": [
+            "Gunship"
+        ],
+        "Length": 53,
+        "Value": 300,
+        "Cargo": 0,
+        "Crew": 4,
+        "Release Year": 2042
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "Terrapin Medic",
+        "Role(s)": [
+            "Medical"
+        ],
+        "Length": 20,
+        "Value": 220,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "F7C-R Hornet Tracker Mk II",
+        "Role(s)": [
+            "Medium Fighter"
+        ],
+        "Length": 22.5,
+        "Value": 185,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "F7C-S Hornet Ghost Mk II",
+        "Role(s)": [
+            "Stealth",
+            "Medium Fighter"
+        ],
+        "Length": 22.5,
+        "Value": 185,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "Mirai",
+        "Ship Name": "Guardian",
+        "Role(s)": [
+            "Heavy Fighter"
+        ],
+        "Length": 25,
+        "Value": 250,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "Mirai",
+        "Ship Name": "Guardian QI",
+        "Role(s)": [
+            "Heavy Fighter"
+        ],
+        "Length": 25,
+        "Value": 260,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2024
+    },
+    {
+        "Manufacturer": "MISC",
+        "Ship Name": "Fortune",
+        "Role(s)": [
+            "Salvage"
+        ],
+        "Length": 26.5,
+        "Value": 175,
+        "Cargo": 12,
+        "Crew": 1,
+        "Release Year": 2025
+    },
+    {
+        "Manufacturer": "Anvil",
+        "Ship Name": "F7C-M Super Hornet Mk II",
+        "Role(s)": [
+            "Medium Fighter"
+        ],
+        "Length": 24,
+        "Value": 240,
+        "Cargo": 0,
+        "Crew": 2,
+        "Release Year": 2025
+    },
+    {
+        "Manufacturer": "Drake",
+        "Ship Name": "Golem",
+        "Role(s)": [
+            "Mining"
+        ],
+        "Length": 15.5,
+        "Value": 60,
+        "Cargo": 32,
+        "Crew": 1,
+        "Release Year": 2025
+    },
+    {
+        "Manufacturer": "Argo",
+        "Ship Name": "ATLS GEO",
+        "Role(s)": [
+            "Mining"
+        ],
+        "Length": 0.5,
+        "Value": 45,
+        "Cargo": 0,
+        "Crew": 1,
+        "Release Year": 2025
+    }
+]

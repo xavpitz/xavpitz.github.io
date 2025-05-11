@@ -1,0 +1,793 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STARDOLVER (Stardle Solver)</title>
+  <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.22.5/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+  <div id="root"></div>
+  <footer class="fixed bottom-0 right-0 p-2 text-gray-500 text-sm">Co-developed by Grok & EnergyCatalyzer</footer>
+  <script type="text/babel">
+    if (typeof Babel === 'undefined' || typeof React === 'undefined' || typeof ReactDOM === 'undefined') {
+      document.getElementById('root').innerHTML = `
+        <div class="container mx-auto p-4 text-center">
+          <h1 class="text-3xl font-bold mb-4 text-white">Error</h1>
+          <p class="text-red-400 mb-4">Failed to load required scripts (React, ReactDOM, or Babel). Please check your internet connection and try again.</p>
+          <p class="text-gray-200">Ensure the following URLs are accessible:</p>
+          <ul class="list-disc list-inside text-gray-200">
+            <li>https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js</li>
+            <li>https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js</li>
+            <li>https://cdn.jsdelivr.net/npm/@babel/standalone@7.22.5/babel.min.js</li>
+            <li>https://cdn.tailwindcss.com</li>
+          </ul>
+        </div>
+      `;
+    } else {
+      class ErrorBoundary extends React.Component {
+        state = { hasError: false, error: null };
+        static getDerivedStateFromError(error) {
+          return { hasError: true, error };
+        }
+        render() {
+          if (this.state.hasError) {
+            return (
+              <div className="container mx-auto p-4 text-center">
+                <h1 className="text-3xl font-bold mb-4 text-white">Error</h1>
+                <p className="text-red-400 mb-4">Something went wrong: {this.state.error?.message || 'Unknown error'}</p>
+                <p className="text-gray-200">Please refresh the page or check the console (F12) for details.</p>
+              </div>
+            );
+          }
+          return this.props.children;
+        }
+      }
+
+      const App = () => {
+        const [ships, setShips] = React.useState([]);
+        const [shipImages, setShipImages] = React.useState([]);
+        const [preSelectedShip, setPreSelectedShip] = React.useState(null);
+        const [selectedShip, setSelectedShip] = React.useState(null);
+        const [possibleShips, setPossibleShips] = React.useState([]);
+        const [feedback, setFeedback] = React.useState({
+          manufacturer: null,
+          roles: null,
+          length: null,
+          price: null,
+          cargo: null,
+          crew: null,
+          releaseYear: null,
+        });
+        const [error, setError] = React.useState(null);
+        const [inputValue, setInputValue] = React.useState('');
+        const [isLoading, setIsLoading] = React.useState(true);
+        const [guessedValues, setGuessedValues] = React.useState({
+          manufacturer: null,
+          roles: null,
+          length: { min: null, max: null },
+          price: { min: null, max: null },
+          cargo: { min: null, max: null },
+          crew: { min: null, max: null },
+          releaseYear: { min: null, max: null },
+        });
+        const [hasSelectedOnce, setHasSelectedOnce] = React.useState(false);
+
+        React.useEffect(() => {
+          const fetchData = async () => {
+            setIsLoading(true);
+            try {
+              const shipResponse = await fetch('https://raw.githubusercontent.com/xavpitz/stardolver/refs/heads/main/stardolver_shiplist.json');
+              if (!shipResponse.ok) throw new Error(`Failed to fetch ship list: ${shipResponse.statusText}`);
+              const shipData = await shipResponse.json();
+              setShips(shipData);
+              setPossibleShips(shipData);
+
+              const imageResponse = await fetch('https://api.starcitizen-api.com/e44a1e3a5d20293b6977bb7007872e64/v1/auto/ships');
+              if (!imageResponse.ok) throw new Error(`Failed to fetch ship images: ${imageResponse.statusText}`);
+              const imageData = await imageResponse.json();
+              setShipImages(imageData.data || []);
+            } catch (err) {
+              setError(`Error loading data: ${err.message}. Ensure you're running this on a local server (e.g., 'python -m http.server') to avoid CORS issues.`);
+            } finally {
+              setIsLoading(false);
+            }
+          };
+          fetchData();
+        }, []);
+
+        // Auto-submit feedback when all fields are set
+        React.useEffect(() => {
+          const allFeedbackSet = Object.values(feedback).every(v => v !== null);
+          if (allFeedbackSet && selectedShip) {
+            submitFeedback();
+          }
+        }, [feedback, selectedShip]);
+
+        const getAttrValue = (ship, attr) => {
+          if (attr === 'price') return parseFloat(ship.price[0]);
+          if (attr === 'length' || attr === 'cargo') return parseFloat(ship[attr]);
+          if (attr === 'crew' || attr === 'releaseYear') return ship[attr];
+          return null;
+        };
+
+        const calculateInfoGain = (ship, possibleShips) => {
+          const attributes = ['length', 'price', 'cargo', 'crew', 'releaseYear'];
+          let totalInfoGain = 0;
+          attributes.forEach(attr => {
+            const value = getAttrValue(ship, attr);
+            const lessThan = possibleShips.filter(s => getAttrValue(s, attr) < value).length;
+            const equalTo = possibleShips.filter(s => getAttrValue(s, attr) === value).length;
+            const greaterThan = possibleShips.filter(s => getAttrValue(s, attr) > value).length;
+            const infoGain = Math.min(lessThan, equalTo, greaterThan);
+            totalInfoGain += infoGain;
+          });
+          return totalInfoGain;
+        };
+
+        const sortedPossibleShipsWithInfo = React.useMemo(() => {
+          return possibleShips.map(ship => ({
+            ship,
+            infoGain: calculateInfoGain(ship, possibleShips),
+          })).sort((a, b) => b.infoGain - a.infoGain);
+        }, [possibleShips]);
+
+        const selectRandomShip = () => {
+          if (possibleShips.length === 0) {
+            setError('No remaining ships to select from');
+            return;
+          }
+          const randomIndex = Math.floor(Math.random() * possibleShips.length);
+          setPreSelectedShip(possibleShips[randomIndex]);
+          setInputValue(possibleShips[randomIndex].shipName);
+        };
+
+        const selectBestShip = () => {
+          if (possibleShips.length === 0) {
+            setError('No remaining ships to select from');
+            return;
+          }
+          if (possibleShips.length === 1) {
+            setPreSelectedShip(possibleShips[0]);
+            setInputValue(possibleShips[0].shipName);
+            return;
+          }
+          const attributes = ['length', 'price', 'cargo', 'crew', 'releaseYear'];
+          let bestShip = null;
+          let maxInfoGain = -1;
+          possibleShips.forEach(ship => {
+            let totalInfoGain = 0;
+            attributes.forEach(attr => {
+              const value = getAttrValue(ship, attr);
+              const lessThan = possibleShips.filter(s => getAttrValue(s, attr) < value).length;
+              const equalTo = possibleShips.filter(s => getAttrValue(s, attr) === value).length;
+              const greaterThan = possibleShips.filter(s => getAttrValue(s, attr) > value).length;
+              const infoGain = Math.min(lessThan, equalTo, greaterThan);
+              totalInfoGain += infoGain;
+            });
+            if (totalInfoGain > maxInfoGain) {
+              maxInfoGain = totalInfoGain;
+              bestShip = ship;
+            }
+          });
+          setPreSelectedShip(bestShip);
+          setInputValue(bestShip.shipName);
+        };
+
+        const confirmShipSelection = () => {
+          if (!preSelectedShip) {
+            setError('No ship pre-selected');
+            return;
+          }
+          setSelectedShip(preSelectedShip);
+          setPreSelectedShip(null);
+          setInputValue('');
+          setHasSelectedOnce(true);
+          setFeedback({
+            manufacturer: null,
+            roles: null,
+            length: null,
+            price: null,
+            cargo: null,
+            crew: null,
+            releaseYear: null,
+          });
+        };
+
+        const handleFeedbackChange = (key, value) => {
+          setFeedback((prev) => ({ ...prev, [key]: value }));
+        };
+
+        const submitFeedback = () => {
+          if (!selectedShip) {
+            setError('No ship selected');
+            return;
+          }
+          console.log('Feedback before filtering:', feedback);
+          const newPossibleShips = possibleShips.filter((ship) => {
+            try {
+              if (feedback.manufacturer === 'correct' && ship.manufacturer !== selectedShip.manufacturer) return false;
+              if (feedback.manufacturer === 'incorrect' && ship.manufacturer === selectedShip.manufacturer) return false;
+              if (feedback.roles === 'correct') {
+                if (ship.roles.length !== selectedShip.roles.length || !ship.roles.every((role) => selectedShip.roles.includes(role))) return false;
+              }
+              if (feedback.roles === 'incorrect' && ship.roles.length === selectedShip.roles.length && ship.roles.every((role) => selectedShip.roles.includes(role))) return false;
+              if (feedback.roles === 'partial' && !ship.roles.some((role) => selectedShip.roles.includes(role))) return false;
+              const numericalChecks = [
+                { key: 'length', value: parseFloat(ship.length), compare: parseFloat(selectedShip.length) },
+                { key: 'price', value: parseFloat(ship.price[0]), compare: parseFloat(selectedShip.price[0]) },
+                { key: 'cargo', value: parseFloat(ship.cargo), compare: parseFloat(selectedShip.cargo) },
+                { key: 'crew', value: ship.crew, compare: selectedShip.crew },
+                { key: 'releaseYear', value: ship.releaseYear, compare: selectedShip.releaseYear },
+              ];
+              return numericalChecks.every(({ key, value, compare }) => {
+                if (!feedback[key]) return true;
+                if (feedback[key] === 'correct') return value === compare;
+                if (feedback[key] === 'less') return value < compare;
+                if (feedback[key] === 'greater') return value > compare;
+                return true;
+              });
+            } catch (err) {
+              console.error(`Error filtering ship ${ship.shipName}: ${err.message}`);
+              return false;
+            }
+          });
+          console.log('Filtered ships:', newPossibleShips.map(s => `${s.shipName} - ${s.releaseYear}`));
+          setPossibleShips(newPossibleShips);
+
+          const updatedGuessedValues = { ...guessedValues };
+          if (newPossibleShips.length > 0) {
+            const manufacturers = new Set(newPossibleShips.map(s => s.manufacturer));
+            updatedGuessedValues.manufacturer = manufacturers.size === 1 ? newPossibleShips[0].manufacturer : null;
+            const rolesList = newPossibleShips.map(s => s.roles.sort().join(','));
+            const allRolesSame = rolesList.every(r => r === rolesList[0]);
+            updatedGuessedValues.roles = allRolesSame ? newPossibleShips[0].roles : null;
+            const numericalAttrs = ['length', 'price', 'cargo', 'crew', 'releaseYear'];
+            numericalAttrs.forEach(attr => {
+              const values = newPossibleShips.map(s => getAttrValue(s, attr));
+              updatedGuessedValues[attr].min = Math.min(...values);
+              updatedGuessedValues[attr].max = Math.max(...values);
+            });
+          } else {
+            updatedGuessedValues.manufacturer = null;
+            updatedGuessedValues.roles = null;
+            numericalAttrs.forEach(attr => {
+              updatedGuessedValues[attr].min = null;
+              updatedGuessedValues[attr].max = null;
+            });
+          }
+          setGuessedValues(updatedGuessedValues);
+
+          setError(newPossibleShips.length === 0 ? 'No ships match your feedback. Try again.' : null);
+          setFeedback({
+            manufacturer: null,
+            roles: null,
+            length: null,
+            price: null,
+            cargo: null,
+            crew: null,
+            releaseYear: null,
+          });
+          setSelectedShip(null);
+        };
+
+        const getShipImage = (ship) => {
+          const manufacturerMap = {
+            'Origin': 'ORIG',
+            'Crusader': 'CRSD',
+            'RSI': 'RSI',
+            'Anvil': 'ANVL',
+            'Aegis': 'AEGS',
+            'Drake': 'DRAK',
+            'Esperia': 'ESPR',
+            'Banu': 'BANU',
+            'MISC': 'MISC',
+            'Aopoa': 'AOPO',
+            'Consolidated Outland': 'CNOU',
+            'Argo': 'ARGO',
+            'Mirai': 'MRAI',
+            'Greycat': 'GRIN',
+            'Tumbril': 'TMBL',
+            'Gatac': 'GATX',
+            'Kruger': 'KRGR',
+          };
+          const apiShip = shipImages.find((imgShip) => {
+            if (!imgShip || !imgShip.manufacturer || !imgShip.manufacturer.code || !imgShip.name) {
+              console.warn(`Skipping invalid API ship entry: ${JSON.stringify(imgShip)}`);
+              return false;
+            }
+            const mappedCode = manufacturerMap[ship.manufacturer];
+            if (!mappedCode) console.warn(`No manufacturer code mapping for ${ship.manufacturer} (${ship.shipName})`);
+            return mappedCode && imgShip.manufacturer.code === mappedCode && imgShip.name.toLowerCase() === ship.shipName.toLowerCase();
+          });
+          if (!apiShip) console.log(`No image found for ${ship.shipName} (${ship.manufacturer})`);
+          return apiShip ? {
+            avatar: apiShip.media?.[0]?.images?.avatar || '',
+            large: apiShip.media?.[0]?.source_url || '',
+          } : { avatar: '', large: '' };
+        };
+
+        const resetGame = () => {
+          setPossibleShips(ships);
+          setPreSelectedShip(null);
+          setSelectedShip(null);
+          setInputValue('');
+          setFeedback({
+            manufacturer: null,
+            roles: null,
+            length: null,
+            price: null,
+            cargo: null,
+            crew: null,
+            releaseYear: null,
+          });
+          setGuessedValues({
+            manufacturer: null,
+            roles: null,
+            length: { min: null, max: null },
+            price: { min: null, max: null },
+            cargo: { min: null, max: null },
+            crew: { min: null, max: null },
+            releaseYear: { min: null, max: null },
+          });
+          setError(null);
+          setHasSelectedOnce(false);
+        };
+
+        if (isLoading) {
+          return (
+            <div className="container mx-auto p-4 text-center">
+              <h1 className="text-3xl font-bold mb-4 text-white">Loading...</h1>
+              <p className="text-gray-200">Please wait while the ship data is being fetched.</p>
+            </div>
+          );
+        }
+
+        if (error && !selectedShip && possibleShips.length === 0) {
+          return (
+            <div className="container mx-auto p-4 text-center">
+              <h1 className="text-3xl font-bold mb-4 text-white">STARDOLVER (Stardle Solver)</h1>
+              <p className="text-red-400 mb-4">{error}</p>
+              <button
+                onClick={resetGame}
+                className="px-4 py-2 bg-green-600 hover:bg-green-700 rounded text-white font-bold"
+              >
+                Well Done
+              </button>
+            </div>
+          );
+        }
+
+        return (
+          <div className="container mx-auto p-4">
+            <h1 className="text-3xl font-bold mb-4 text-center text-white">STARDOLVER (Stardle Solver)</h1>
+
+            {/* Ship Pre-Selection */}
+            <div className="mb-6">
+              <h2 className="text-xl font-semibold mb-2 text-white">{hasSelectedOnce ? 'Pre-Select a Ship' : 'Select a Ship'}</h2>
+              <div className="flex gap-2 items-center flex-wrap">
+                <input
+                  type="text"
+                  list="shipNames"
+                  value={inputValue}
+                  onChange={(e) => {
+                    setInputValue(e.target.value);
+                    const ship = ships.find((s) => s.shipName.toLowerCase() === e.target.value.toLowerCase());
+                    setPreSelectedShip(ship || null);
+                  }}
+                  placeholder="Type ship name..."
+                  className="p-2 bg-gray-800 border border-gray-600 rounded w-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <datalist id="shipNames">
+                  {ships.map((ship) => (
+                    <option key={ship.id} value={ship.shipName} />
+                  ))}
+                </datalist>
+                <button
+                  onClick={selectRandomShip}
+                  disabled={possibleShips.length === 0}
+                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded text-white font-bold disabled:bg-gray-600 disabled:cursor-not-allowed"
+                >
+                  Random Ship
+                </button>
+                <button
+                  onClick={selectBestShip}
+                  disabled={possibleShips.length === 0}
+                  className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded text-white font-bold disabled:bg-gray-600 disabled:cursor-not-allowed"
+                >
+                  Best Ship
+                </button>
+                <button
+                  onClick={resetGame}
+                  className="px-4 py-2 bg-green-600 hover:bg-green-700 rounded text-white font-bold"
+                >
+                  Well Done
+                </button>
+              </div>
+              {preSelectedShip && (
+                <div className="mt-4 p-4 bg-gray-800 rounded border border-gray-700 flex flex-col md:flex-row items-center">
+                  {getShipImage(preSelectedShip).large && (
+                    <img
+                      src={getShipImage(preSelectedShip).large}
+                      alt={preSelectedShip.shipName}
+                      className="w-32 h-32 object-cover rounded mb-4 md:mb-0 md:mr-4"
+                    />
+                  )}
+                  <div>
+                    <p className="text-white font-bold">{preSelectedShip.shipName}</p>
+                    <p className="text-blue-400">InfoGain: {calculateInfoGain(preSelectedShip, possibleShips)}</p>
+                    <p className="text-gray-200">Manufacturer: {preSelectedShip.manufacturer}</p>
+                    <p className="text-gray-200">Roles: {preSelectedShip.roles.join(', ')}</p>
+                    <p className="text-gray-200">Length: {preSelectedShip.length} m</p>
+                    <p className="text-gray-200">Value: ${preSelectedShip.price[0]}</p>
+                    <p className="text-gray-200">Cargo: {preSelectedShip.cargo} SCU</p>
+                    <p className="text-gray-200">Crew: {preSelectedShip.crew}</p>
+                    <p className="text-gray-200">Release Year: {preSelectedShip.releaseYear}</p>
+                  </div>
+                  <button
+                    onClick={confirmShipSelection}
+                    className="mt-4 md:mt-0 md:ml-4 px-4 py-2 bg-green-600 hover:bg-green-700 rounded text-white font-bold"
+                  >
+                    Submit Ship
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Feedback Form */}
+            {selectedShip && (
+              <div className="mb-6">
+                <h2 className="text-xl font-semibold mb-2 text-white">Provide Feedback</h2>
+                <table className="w-full mb-4 border border-gray-700 table-fixed">
+                  <thead>
+                    <tr className="bg-gray-800 text-white">
+                      <th className="p-2 w-1/8 text-left">Ship</th>
+                      <th className="p-2 w-1/8 text-left">Manufacturer</th>
+                      <th className="p-2 w-1/8 text-left">Roles</th>
+                      <th className="p-2 w-1/8 text-left">Length</th>
+                      <th className="p-2 w-1/8 text-left">Value</th>
+                      <th className="p-2 w-1/8 text-left">Cargo</th>
+                      <th className="p-2 w-1/8 text-left">Crew</th>
+                      <th className="p-2 w-1/8 text-left">Release Year</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-gray-700">
+                      <td rowSpan="3" className="p-2 text-gray-200 align-middle">
+                        <div className="flex flex-col items-center">
+                          <img
+                            src={getShipImage(selectedShip).large}
+                            alt={selectedShip.shipName}
+                            className="w-24 h-24 object-cover rounded mb-2 filter brightness-50"
+                          />
+                          <span className="text-white font-bold uppercase">{selectedShip.shipName}</span>
+                        </div>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('manufacturer', 'correct')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.manufacturer === 'correct' ? 'bg-green-900 text-white' : 'bg-green-600 hover:bg-green-700 text-white'}`}
+                        >
+                          OK
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('roles', 'correct')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.roles === 'correct' ? 'bg-green-900 text-white' : 'bg-green-600 hover:bg-green-700 text-white'}`}
+                        >
+                          OK
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('length', 'greater')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.length === 'greater' ? 'bg-blue-900 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+                        >
+                          ↑
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('price', 'greater')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.price === 'greater' ? 'bg-blue-900 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+                        >
+                          ↑
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('cargo', 'greater')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.cargo === 'greater' ? 'bg-blue-900 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+                        >
+                          ↑
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('crew', 'greater')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.crew === 'greater' ? 'bg-blue-900 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+                        >
+                          ↑
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('releaseYear', 'greater')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.releaseYear === 'greater' ? 'bg-blue-900 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
+                        >
+                          ↑
+                        </button>
+                      </td>
+                    </tr>
+                    <tr className="border-b border-gray-700">
+                      <td className="p-2"></td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('roles', 'partial')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.roles === 'partial' ? 'bg-yellow-900 text-white' : 'bg-yellow-600 hover:bg-yellow-700 text-white'}`}
+                        >
+                          PARTIAL
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('length', 'correct')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.length === 'correct' ? 'bg-green-900 text-white' : 'bg-green-600 hover:bg-green-700 text-white'}`}
+                        >
+                          =
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('price', 'correct')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.price === 'correct' ? 'bg-green-900 text-white' : 'bg-green-600 hover:bg-green-700 text-white'}`}
+                        >
+                          =
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('cargo', 'correct')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.cargo === 'correct' ? 'bg-green-900 text-white' : 'bg-green-600 hover:bg-green-700 text-white'}`}
+                        >
+                          =
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('crew', 'correct')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.crew === 'correct' ? 'bg-green-900 text-white' : 'bg-green-600 hover:bg-green-700 text-white'}`}
+                        >
+                          =
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('releaseYear', 'correct')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.releaseYear === 'correct' ? 'bg-green-900 text-white' : 'bg-green-600 hover:bg-green-700 text-white'}`}
+                        >
+                          =
+                        </button>
+                      </td>
+                    </tr>
+                    <tr className="border-b border-gray-700">
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('manufacturer', 'incorrect')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.manufacturer === 'incorrect' ? 'bg-red-900 text-white' : 'bg-red-600 hover:bg-red-700 text-white'}`}
+                        >
+                          NOK
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('roles', 'incorrect')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.roles === 'incorrect' ? 'bg-red-900 text-white' : 'bg-red-600 hover:bg-red-700 text-white'}`}
+                        >
+                          NOK
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('length', 'less')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.length === 'less' ? 'bg-orange-900 text-white' : 'bg-orange-600 hover:bg-orange-700 text-white'}`}
+                        >
+                          ↓
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('price', 'less')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.price === 'less' ? 'bg-orange-900 text-white' : 'bg-orange-600 hover:bg-orange-700 text-white'}`}
+                        >
+                          ↓
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('cargo', 'less')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.cargo === 'less' ? 'bg-orange-900 text-white' : 'bg-orange-600 hover:bg-orange-700 text-white'}`}
+                        >
+                          ↓
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('crew', 'less')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.crew === 'less' ? 'bg-orange-900 text-white' : 'bg-orange-600 hover:bg-orange-700 text-white'}`}
+                        >
+                          ↓
+                        </button>
+                      </td>
+                      <td className="p-2">
+                        <button
+                          onClick={() => handleFeedbackChange('releaseYear', 'less')}
+                          className={`w-full px-2 py-1 rounded font-bold ${feedback.releaseYear === 'less' ? 'bg-orange-900 text-white' : 'bg-orange-600 hover:bg-orange-700 text-white'}`}
+                        >
+                          ↓
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button
+                  onClick={submitFeedback}
+                  className="px-4 py-2 bg-green-600 hover:bg-green-700 rounded text-white font-bold"
+                >
+                  Submit
+                </button>
+              </div>
+            )}
+
+            {/* Guessed Values Summary */}
+            <div className="mb-6">
+              <h2 className="text-xl font-semibold mb-2 text-white">Guessed Values Summary</h2>
+              <table className="w-full border border-gray-700 table-fixed">
+                <thead>
+                  <tr className="bg-gray-800 text-white">
+                    <th className="p-2 w-1/8 text-left"></th>
+                    <th className="p-2 w-1/8 text-left">Manufacturer</th>
+                    <th className="p-2 w-1/8 text-left">Roles</th>
+                    <th className="p-2 w-1/8 text-left">Length</th>
+                    <th className="p-2 w-1/8 text-left">Value</th>
+                    <th className="p-2 w-1/8 text-left">Cargo</th>
+                    <th className="p-2 w-1/8 text-left">Crew</th>
+                    <th className="p-2 w-1/8 text-left">Release Year</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-700">
+                    <td className="p-2 text-gray-200 font-bold">≥</td>
+                    <td className="p-2 text-gray-200">{guessedValues.manufacturer || ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.roles ? guessedValues.roles.join(', ') : ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.length.min !== null ? guessedValues.length.min : ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.price.min !== null ? guessedValues.price.min : ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.cargo.min !== null ? guessedValues.cargo.min : ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.crew.min !== null ? guessedValues.crew.min : ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.releaseYear.min !== null ? guessedValues.releaseYear.min : ''}</td>
+                  </tr>
+                  <tr className="border-b border-gray-700">
+                    <td className="p-2 text-gray-200 font-bold">=</td>
+                    <td className="p-2 text-gray-200">{guessedValues.manufacturer || ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.roles ? guessedValues.roles.join(', ') : ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.length.min === guessedValues.length.max && guessedValues.length.min !== null ? guessedValues.length.min : ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.price.min === guessedValues.price.max && guessedValues.price.min !== null ? guessedValues.price.min : ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.cargo.min === guessedValues.cargo.max && guessedValues.cargo.min !== null ? guessedValues.cargo.min : ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.crew.min === guessedValues.crew.max && guessedValues.crew.min !== null ? guessedValues.crew.min : ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.releaseYear.min === guessedValues.releaseYear.max && guessedValues.releaseYear.min !== null ? guessedValues.releaseYear.min : ''}</td>
+                  </tr>
+                  <tr className="border-b border-gray-700">
+                    <td className="p-2 text-gray-200 font-bold">≤</td>
+                    <td className="p-2 text-gray-200">{guessedValues.manufacturer || ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.roles ? guessedValues.roles.join(', ') : ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.length.max !== null ? guessedValues.length.max : ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.price.max !== null ? guessedValues.price.max : ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.cargo.max !== null ? guessedValues.cargo.max : ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.crew.max !== null ? guessedValues.crew.max : ''}</td>
+                    <td className="p-2 text-gray-200">{guessedValues.releaseYear.max !== null ? guessedValues.releaseYear.max : ''}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Remaining Ships */}
+            <div>
+              <h2 className="text-xl font-semibold mb-2 text-white">Possible Remaining Ships ({possibleShips.length})</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {sortedPossibleShipsWithInfo.map(({ ship, infoGain }) => {
+                  const images = getShipImage(ship);
+                  return (
+                    <div
+                      key={ship.id}
+                      className="p-4 bg-gray-800 rounded border border-gray-700 flex items-start cursor-pointer"
+                      onClick={() => {
+                        setPreSelectedShip(ship);
+                        setInputValue(ship.shipName);
+                      }}
+                    >
+                      {images.avatar && (
+                        <img
+                          src={images.avatar}
+                          alt={ship.shipName}
+                          className="w-16 h-16 object-cover mr-4 rounded"
+                          onError={(e) => (e.target.style.display = 'none')}
+                        />
+                      )}
+                      <div>
+                        <p className="text-white font-bold">{ship.shipName}</p>
+                        <p className="text-blue-400">InfoGain: {infoGain}</p>
+                        <p className="text-gray-200">Manufacturer: {ship.manufacturer}</p>
+                        <p className="text-gray-200">Roles: {ship.roles.join(', ')}</p>
+                        <p className="text-gray-200">Length: {ship.length} m</p>
+                        <p className="text-gray-200">Value: ${ship.price[0]}</p>
+                        <p className="text-gray-200">Cargo: {ship.cargo} SCU</p>
+                        <p className="text-gray-200">Crew: {ship.crew}</p>
+                        <p className="text-gray-200">Release Year: {ship.releaseYear}</p>
+                        {images.large && (
+                          <a href={images.large} target="_blank" className="text-blue-400 hover:underline">
+                            View Large Image
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        );
+      };
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
+      );
+    }
+  </script>
+</body>
+</html>
